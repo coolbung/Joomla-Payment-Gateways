@@ -14,19 +14,6 @@ class  plgPaymentPaypal extends JPlugin
 	{
 		parent::__construct($subject, $config);
 
-		//Set the language in the class
-		$config =& JFactory::getConfig();
-		$options = array(
-			'cachebase' 	=> JPATH_CACHE,
-			'defaultgroup' 	=> 'page',
-			'lifetime' 		=> $this->params->get('cachetime', 15) * 60,
-			'browsercache'	=> $this->params->get('browsercache', false),
-			'caching'		=> false,
-			'language'		=> $config->getValue('config.language', 'en-GB')
-		);
-
-		jimport('joomla.cache.cache');
-		$this->_cache =& JCache::getInstance( 'page', $options );
 	}
 
 	/* Internal use functions */
@@ -36,7 +23,7 @@ class  plgPaymentPaypal extends JPlugin
 		$app = JFactory::getApplication();
 	
 		$core_file 	= dirname(__FILE__).DS.$this->_name.DS.'tmpl'.DS.'default.php';
-		$override		= JPATH_BASE.DS.'templates'.DS.$app->getTemplate().DS.'html'.DS.'plugins'.DS.$this->_type.DS.$this->_name.DS.$layout.'.php';
+		$override	= JPATH_BASE.DS.'templates'.DS.$app->getTemplate().DS.'html'.DS.'plugins'.DS.$this->_type.DS.$this->_name.DS.$layout.'.php';
 		
 		return (JFile::exists($override)) ? $override : $core_file;
 	}
