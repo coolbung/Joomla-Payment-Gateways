@@ -5,7 +5,7 @@
 	<creationDate>June 2011</creationDate>
 	<copyright></copyright>
 	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
-	<authorEmail></authorEmail>
+	<authorEmail>ashwin.date@tekdi.net</authorEmail>
 	<authorUrl></authorUrl>
 	<version>1.0</version>
 	<description>Paypal payment plugin</description>
@@ -15,7 +15,11 @@
 	</files>
 	<params>
   		<param name="display_name" type="text" default="Paypal" label="Display Name" description=""/>
-  		
   		<param name="payer_id" type="text" default="" label="Your paypal email" description="Paypal email"/>
+  		<param type="spacer" />
+		<param name="sandbox" type="radio" default="0" label="Sandbox ?" description="Select yes to put on Sandbox mode. In this case the paypal email should be the sandbox email.">
+		  <option value="0">NO</option>
+		  <option value="1">YES</option>
+		</param>
 	</params>
 </install>
