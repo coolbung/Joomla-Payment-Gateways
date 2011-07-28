@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install version="1.5" type="plugin" group="payment">
+	<name>Payment - Linkpoint</name>
+	<author>Deepak Patil</author>
+	<creationDate>July 2011</creationDate>
+	<copyright></copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>deepak.p@tekdi.net</authorEmail>
+	<authorUrl></authorUrl>
+	<version>1.0</version>
+	<description>Linkpoint payment plugin</description>
+	<files>
+		<filename plugin="linkpoint">linkpoint.php</filename>
+		<folder>linkpoint</folder>
+	</files>
+	<languages> 
+			<language tag="en-GB">en-GB.plg_payment_linkpoint.ini</language>
+  	</languages> 
+
+	<!-- parameters for Joomla 1.5.x -->
+	<params>
+		<param name="testmode" type="radio" default="0" label="Enable Sandbox" description="LINKPOINT_SANDBOX_MODE_DESC">
+		    <option value="0">NO</option>
+		    <option value="1">YES</option>
+		</param>
+		<param name="pem_filepath" type="text" size="50" default="" label="PEM File Path" description="LINKPOINT_PEM_FILEPATH_DESC"/>	
+		<param name="store_id" type="text" size="25" default="" label="Store ID" description="LINKPOINT_STORE_ID"/>	
+		<param name="port" type="text" size="25" default="1129" label="Port" description="LINKPOINT_PORT_NUMBER"/>    	
+	</params>
+</install>
